@@ -1,180 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sagad Luxury Rice</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Georgia, serif;
-      background: #f7f3e8;
-      color: #123c2a;
-    }
-
-    header {
-      background: #073b2a;
-      color: #d4af37;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 28px;
-    }
-
-    header p {
-      color: white;
-      margin-top: 8px;
-    }
-
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: linear-gradient(
-        rgba(7,59,42,.85),
-        rgba(7,59,42,.85)
-      );
-      color: white;
-    }
-
-    .hero h2 {
-      color: #d4af37;
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      font-size: 17px;
-      line-height: 1.6;
-    }
-
-    .products {
-      padding: 30px 15px;
-    }
-
-    .products h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #073b2a;
-    }
-
-    .card {
-      background: white;
-      border-radius: 18px;
-      padding: 25px;
-      margin-bottom: 20px;
-      text-align: center;
-      box-shadow: 0 5px 18px rgba(0,0,0,.12);
-    }
-
-    .rice {
-      font-size: 65px;
-      margin-bottom: 10px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #d4af37;
-      color: #073b2a;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      color: #073b2a;
-      font-size: 22px;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-
-    button {
-      border: none;
-      background: #073b2a;
-      color: #d4af37;
-      padding: 13px 25px;
-      border-radius: 25px;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    footer {
-      background: #073b2a;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      margin-top: 20px;
-    }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SAGAD LUXURY - Premium Nigerian Rice & Grains | TEMU Style</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#f5f5f5}
+.temu-top{background:#fb7701;color:#fff;text-align:center;padding:8px;font-weight:800;font-size:13px;letter-spacing:0.5px}
+.header{background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+.header-main{display:flex;align-items:center;gap:10px;padding:12px 15px}
+.logo{font-weight:900;font-size:22px;color:#fb7701;letter-spacing:-1px} .logo span{color:#000}
+.search{flex:1;display:flex;background:#f0f0f0;border-radius:20px;padding:8px 15px;align-items:center}
+.search input{border:none;background:transparent;flex:1;outline:none;font-size:14px}
+.icons{display:flex;gap:12px;font-size:22px}
+.cat-bar{display:flex;gap:15px;overflow-x:auto;padding:10px 15px;background:#fff;scrollbar-width:none}
+.cat-bar div{white-space:nowrap;font-size:13px;font-weight:600;padding:6px 12px;background:#f5f5f5;border-radius:20px;cursor:pointer}
+.cat-bar div.active{background:#000;color:#fff}
+.flash{background:linear-gradient(90deg,#ff3b30,#ff6b30);color:#fff;display:flex;justify-content:space-between;padding:10px 15px;align-items:center;margin:10px;border-radius:12px}
+.timer{display:flex;gap:5px;font-weight:800}
+.timer span{background:#000;padding:4px 6px;border-radius:4px;font-size:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);position:relative}
+.card img{width:100%;height:160px;object-fit:cover}
+.badge{position:absolute;top:8px;left:8px;background:#ff3b30;color:#fff;font-size:10px;font-weight:800;padding:4px 6px;border-radius:4px}
+.info{padding:10px}
+.title{font-size:13px;height:36px;overflow:hidden;line-height:1.3}
+.price-row{display:flex;align-items:end;gap:6px;margin-top:6px}
+.new{font-weight:900;font-size:18px;color:#fb7701}
+.old{font-size:12px;text-decoration:line-through;color:#999}
+.sold{font-size:11px;color:#666;margin-top:4px}
+.btn{width:100%;background:#fb7701;color:#fff;border:none;padding:8px;border-radius:20px;font-weight:800;margin-top:8px;cursor:pointer}
+.cart-bar{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;padding:12px 15px;box-shadow:0 -2px 15px rgba(0,0,0,0.1);justify-content:space-between;align-items:center;z-index:200}
+.cart-count{background:#fb7701;color:#fff;border-radius:50%;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;margin-left:4px}
+.checkout{background:#000;color:#fff;border:none;padding:12px 25px;border-radius:25px;font-weight:800}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:300;align-items:end}
+.modal.active{display:flex}
+.modal-box{background:#fff;width:100%;max-height:80%;border-radius:20px 20px 0 0;padding:20px;overflow:auto}
+</style>
 </head>
-
 <body>
-
-<header>
-  <h1>👑 SAGAD LUXURY</h1>
-  <p>Premium Rice • Royal Quality</p>
-</header>
-
-<section class="hero">
-  <h2>Luxury Rice For Your Home</h2>
-  <p>
-    Quality rice carefully selected for families
-    who want premium taste and excellent quality.
-  </p>
-</section>
-
-<section class="products">
-
-  <h2>Our Premium Rice</h2>
-
+<div class="temu-top">🔥 FREE SHIPPING OVER ₦20,000 + EXTRA 30% OFF - TODAY ONLY!</div>
+<div class="header">
+<div class="header-main">
+<div class="logo">SAGAD<span>LUXURY</span></div>
+<div class="search"><span>🔍</span><input id="search" placeholder="Premium Rice, Groundnut..."></div>
+<div class="icons"><span onclick="openCart()">🛒<span id="cartNum" class="cart-count">0</span></span></div>
+</div>
+<div class="cat-bar">
+<div class="active">All</div><div>Premium Rice</div><div>Groundnut</div><div>Beans</div><div>Millet</div><div>Combo Deal</div>
+</div>
+</div>
+<div class="flash">
+<div><b>⚡ FLASH SALE</b> <small>Ending soon!</small></div>
+<div class="timer"><span>02</span>:<span>18</span>:<span>45</span></div>
+</div>
+<div class="grid" id="grid"></div>
+<div class="cart-bar">
+<div><b id="totalItems">0 items</b><br><small id="totalPrice" style="color:#fb7701;font-weight:800">₦0</small></div>
+<button class="checkout" onclick="checkoutWhatsApp()">Checkout via WhatsApp 💬</button>
+</div>
+<div class="modal" id="cartModal" onclick="if(event.target==this)closeCart()">
+<div class="modal-box">
+<h3>🛒 Your Cart</h3>
+<div id="cartList" style="margin-top:15px"></div>
+</div>
+</div>
+<script>
+const products=[
+{ id:1, name:"SAGAD Premium Long Grain Rice 25kg - Stone Free", price:45000, old:62000, sold:"2.3k sold", img:"https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=400", badge:"-30%"},
+{ id:2, name:"Golden Groundnut (Gyada) 10kg - Export Quality", price:18000, old:24000, sold:"1.8k sold", img:"https://images.unsplash.com/photo-1508061253366-f7da158b6d46?w=400", badge:"-25%"},
+{ id:3, name:"Premium Brown Beans 20kg Bag", price:32000, old:40000, sold:"980 sold", img:"https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400", badge:"BESTSELLER"},
+{ id:4, name:"SAGAD Luxury Rice Combo 50kg (2 Bags)", price:85000, old:120000, sold:"5.1k sold", img:"https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400", badge:"-35%"},
+{ id:5, name:"Millet (Gero) Premium 25kg", price:28000, old:35000, sold:"760 sold", img:"https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400", badge:"NEW"},
+{ id:6, name:"SAGAD Family Feast Pack - Rice 25kg + Beans 10kg", price:60000, old:85000, sold:"1.2k sold", img:"https://images.unsplash.com/photo-1536304929831-83865001e31c?w=400", badge:"COMBO"},
+];
+let cart=[];
+function render(){
+ document.getElementById('grid').innerHTML=products.map(p=>`
   <div class="card">
-    <div class="rice">🍚</div>
-
-    <span class="tag">BEST SELLER</span>
-
-    <h3>Sagad Premium Rice</h3>
-
-    <p>Premium quality rice for your family.</p>
-
-    <div class="price">₦50,000</div>
-
-    <button>Order Now</button>
-  </div>
-
-  <div class="card">
-    <div class="rice">🍚</div>
-
-    <span class="tag">PREMIUM</span>
-
-    <h3>Sagad Luxury Rice</h3>
-
-    <p>Special premium rice with excellent quality.</p>
-
-    <div class="price">₦70,000</div>
-
-    <button>Order Now</button>
-  </div>
-
-</section>
-
-<footer>
-  <p>© 2026 Sagad Luxury Rice</p>
-  <p>Premium Quality • Trusted Service</p>
-</footer>
-
+   <div class="badge">${p.badge}</div>
+   <img src="${p.img}">
+   <div class="info">
+    <div class="title">${p.name}</div>
+    <div class="sold">⭐4.8 | ${p.sold}</div>
+    <div class="price-row"><span class="new">₦${p.price.toLocaleString()}</span><span class="old">₦${p.old.toLocaleString()}</span></div>
+    <button class="btn" onclick="add(${p.id})">Add to Cart +</button>
+   </div>
+  </div>`).join('');
+}
+function add(id){
+ const p=products.find(x=>x.id==id);
+ const f=cart.find(x=>x.id==id);
+ if(f) f.qty++; else cart.push({...p,qty:1});
+ update();
+}
+function update(){
+ let count=cart.reduce((s,i)=>s+i.qty,0);
+ let total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+ document.getElementById('cartNum').textContent=count;
+ document.getElementById('totalItems').textContent=count+" items";
+ document.getElementById('totalPrice').textContent="₦"+total.toLocaleString();
+ document.getElementById('cartList').innerHTML=cart.length?cart.map(i=>`<div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee"><div>${i.name}<br><b>₦${i.price.toLocaleString()} x ${i.qty}</b></div><button onclick="remove(${i.id})" style="background:#ff3b30;color:#fff;border:none;padding:5px 10px;border-radius:10px">X</button></div>`).join(''):"<p>Cart empty</p>";
+}
+function remove(id){ cart=cart.filter(x=>x.id!=id); update(); }
+function openCart(){ document.getElementById('cartModal').classList.add('active'); }
+function closeCart(){ document.getElementById('cartModal').classList.remove('active'); }
+function checkoutWhatsApp(){
+ if(!cart.length) return alert("Cart is empty!");
+ let total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+ let msg="Salam! I want to order from SAGAD LUXURY:%0A%0A"+cart.map(i=>`- ${i.name} (${i.qty} x ₦${i.price})`).join('%0A')+"%0A%0ATotal: ₦"+total.toLocaleString()+"%0A%0APlease confirm availability.";
+ let wa="2348012345678";
+ window.open("https://wa.me/"+wa+"?text="+msg,"_blank");
+}
+document.getElementById('search').addEventListener('input',e=>{
+ let q=e.target.value.toLowerCase();
+ document.getElementById('grid').innerHTML=products.filter(p=>p.name.toLowerCase().includes(q)).map(p=>`
+  <div class="card"><div class="badge">${p.badge}</div><img src="${p.img}"><div class="info"><div class="title">${p.name}</div><div class="sold">⭐4.8 | ${p.sold}</div><div class="price-row"><span class="new">₦${p.price.toLocaleString()}</span><span class="old">₦${p.old.toLocaleString()}</span></div><button class="btn" onclick="add(${p.id})">Add to Cart +</button></div></div>`).join('');
+});
+render();
+</script>
 </body>
-  </html>
+</html>
